@@ -1,0 +1,12 @@
+{
+  "name": "bras-experiencie",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "dev": "echo 'Configure turbo/pnpm dev pipelines'",
+    "lint": "echo 'Add eslint config and run lint'",
+    "test": "echo 'Add tests for modules'",
+    "typecheck": "echo 'Add tsconfig project references'"
+  }
+}
