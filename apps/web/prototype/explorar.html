@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bras Experiencie | Explorar</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-content">
+        <strong>Bras Experiencie</strong>
+        <nav>
+          <a href="./index.html">Início</a>
+          <a href="./explorar.html">Explorar</a>
+          <a href="./lojas.html">Lojas</a>
+          <a href="./roteiro.html">Roteiro</a>
+          <a href="./login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container page">
+      <h1>Explorar locais no Brás</h1>
+      <div class="filters card">
+        <input placeholder="O que você procura?" />
+        <select>
+          <option>Todas as categorias</option>
+        </select>
+        <select>
+          <option>Até 1km</option>
+        </select>
+        <button class="btn btn-primary">Aplicar filtros</button>
+      </div>
+
+      <section class="grid-2">
+        <article class="card">
+          <h3>Pré-visualização Google Maps</h3>
+          <p class="muted">Mapa inicial com foco na região do Brás e pins simulados das lojas cadastradas.</p>
+          <div class="map-google-preview">
+            <iframe
+              title="Mapa do Brás"
+              src="https://www.google.com/maps?q=Br%C3%A1s%2C%20S%C3%A3o%20Paulo&z=15&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="pins-list">
+            <span class="pin-chip">📍 Shopping Vautier</span>
+            <span class="pin-chip">📍 Feirinha da Madrugada</span>
+            <span class="pin-chip">📍 Mega Polo Moda</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Lojas mapeadas</h3>
+          <ul class="list">
+            <li>Shopping Vautier • 450m • ⭐ 4.5</li>
+            <li>Feirinha da Madrugada • 600m • ⭐ 4.6</li>
+            <li>Mega Polo Moda • 900m • ⭐ 4.7</li>
+          </ul>
+          <a class="btn btn-primary" href="./lojas.html">Montar roteiro de lojas</a>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

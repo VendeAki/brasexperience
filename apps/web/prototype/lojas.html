@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bras Experiencie | Lojas</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-content">
+        <strong>Bras Experiencie</strong>
+        <nav>
+          <a href="./index.html">Início</a>
+          <a href="./explorar.html">Explorar</a>
+          <a href="./lojas.html">Lojas</a>
+          <a href="./roteiro.html">Roteiro</a>
+          <a href="./login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container page">
+      <section class="section-head">
+        <h1>Lojas</h1>
+        <a href="./roteiro.html">Ver roteiro selecionado →</a>
+      </section>
+
+      <p class="muted">Selecione lojas para montar seu roteiro de compras. Em breve: lojas online e catálogo completo.</p>
+
+      <section class="stores-grid" data-stores-grid>
+        <article class="card store-card" data-store-id="s1" data-store-name="Shopping Vautier" data-store-address="R. Vautier, Brás">
+          <h3>Shopping Vautier</h3>
+          <p class="muted">Moda feminina e masculina no atacado</p>
+          <p>📍 R. Vautier, Brás</p>
+          <div class="actions">
+            <button class="btn btn-secondary" data-add-store>Adicionar ao roteiro</button>
+            <a class="btn btn-primary" href="./explorar.html">Abrir no mapa</a>
+          </div>
+        </article>
+
+        <article class="card store-card" data-store-id="s2" data-store-name="Feirinha da Madrugada" data-store-address="R. Oriente, Brás">
+          <h3>Feirinha da Madrugada</h3>
+          <p class="muted">Diversos segmentos e preços competitivos</p>
+          <p>📍 R. Oriente, Brás</p>
+          <div class="actions">
+            <button class="btn btn-secondary" data-add-store>Adicionar ao roteiro</button>
+            <a class="btn btn-primary" href="./explorar.html">Abrir no mapa</a>
+          </div>
+        </article>
+
+        <article class="card store-card" data-store-id="s3" data-store-name="Mega Polo Moda" data-store-address="R. Barão de Ladário, Brás">
+          <h3>Mega Polo Moda</h3>
+          <p class="muted">Atacado premium para revenda</p>
+          <p>📍 R. Barão de Ladário, Brás</p>
+          <div class="actions">
+            <button class="btn btn-secondary" data-add-store>Adicionar ao roteiro</button>
+            <a class="btn btn-primary" href="./explorar.html">Abrir no mapa</a>
+          </div>
+        </article>
+      </section>
+
+      <p class="muted" data-store-feedback></p>
+    </main>
+
+    <script src="./prototype.js"></script>
+  </body>
+</html>
