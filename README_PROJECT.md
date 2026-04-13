@@ -13,6 +13,7 @@ Protótipo frontend:
 - `apps/web/prototype/index.html`
 - `apps/web/prototype/hospedagens.html`
 - `apps/web/prototype/hospedagem-detalhe.html`
+- `apps/web/prototype/parceiro-detalhe.html`
 
 Supabase/Live Server:
 - `apps/web/.env.example`

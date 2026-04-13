@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bras Experiencie | Perfil do Parceiro</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-content">
+        <strong>Bras Experiencie</strong>
+        <nav>
+          <a href="./index.html">Início</a>
+          <a href="./explorar.html">Explorar</a>
+          <a href="./parceiros.html">Parceiros</a>
+          <a href="./hospedagens.html">Hospedagens</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container page">
+      <a class="back-link" href="./parceiros.html">← Voltar para parceiros</a>
+
+      <section class="detail-layout">
+        <div>
+          <h1 data-provider-name>Carreteiro João</h1>
+          <p class="muted">Responsável pelo serviço: <strong data-provider-owner>João Silva</strong></p>
+          <p class="muted">Cadastro ativo há <strong data-provider-tenure>0 meses</strong></p>
+
+          <section class="card detail-section">
+            <h3>Sobre o serviço</h3>
+            <p>
+              Transporte de mercadorias e apoio logístico para compras no Brás, com atendimento para
+              atacadistas e revendedores em horários flexíveis.
+            </p>
+            <ul class="list">
+              <li>Área de atendimento: Brás, Pari, Bom Retiro</li>
+              <li>Tempo médio de chegada: 20 a 35 minutos</li>
+              <li>Disponível de segunda a sábado</li>
+              <li>Avaliação geral: <strong data-provider-rating>4.8</strong>/5</li>
+            </ul>
+          </section>
+
+          <section class="card detail-section">
+            <h3>Últimas avaliações</h3>
+            <div class="reviews-list" data-reviews-list>
+              <article class="review-item">
+                <p><strong>Ana R.</strong> • ⭐ 5 • há 2 dias</p>
+                <p>Atendimento rápido, muito cuidadoso com as mercadorias.</p>
+              </article>
+              <article class="review-item">
+                <p><strong>Lucas M.</strong> • ⭐ 4 • há 4 dias</p>
+                <p>Chegou no horário combinado e ajudou bastante na logística.</p>
+              </article>
+              <article class="review-item">
+                <p><strong>Patricia S.</strong> • ⭐ 5 • há 1 semana</p>
+                <p>Excelente parceiro para quem vem comprar no Brás.</p>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <aside>
+          <section class="card booking-box detail-section">
+            <h3>Solicitar serviço</h3>
+            <form class="request-form" data-request-form>
+              <label>
+                Data
+                <input type="date" name="serviceDate" required />
+              </label>
+              <label>
+                Hora
+                <input type="time" name="serviceTime" required />
+              </label>
+              <label>
+                Local de encontro
+                <input type="text" name="meetingPoint" placeholder="Ex: Rua Oriente, 200" required />
+              </label>
+              <label>
+                Observações
+                <textarea name="notes" rows="3" placeholder="Ex: 12 volumes, destino Pari"></textarea>
+              </label>
+              <button class="btn btn-primary" type="submit">Enviar solicitação</button>
+            </form>
+            <p class="muted small" data-request-feedback></p>
+          </section>
+
+          <section class="card detail-section">
+            <h3>Deixe seu depoimento</h3>
+            <form class="request-form" data-testimonial-form>
+              <label>
+                Nome
+                <input type="text" name="name" required />
+              </label>
+              <label>
+                Nota (1 a 5)
+                <input type="number" name="rating" min="1" max="5" required />
+              </label>
+              <label>
+                Depoimento
+                <textarea name="comment" rows="3" required></textarea>
+              </label>
+              <button class="btn btn-secondary" type="submit">Publicar depoimento</button>
+            </form>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script src="./prototype.js"></script>
+  </body>
+</html>
