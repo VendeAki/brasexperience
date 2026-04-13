@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bras Experiencie | Login</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-content">
+        <strong>Bras Experiencie</strong>
+        <nav>
+          <a href="./index.html">Início</a>
+          <a href="./explorar.html">Explorar</a>
+          <a href="./lojas.html">Lojas</a>
+          <a href="./roteiro.html">Roteiro</a>
+          <a href="./login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container page login-page">
+      <section class="card login-card">
+        <h1>Entrar no Bras Experiencie</h1>
+        <p class="muted">Login apenas para teste de interface (sem integração com banco por enquanto).</p>
+
+        <div class="test-credentials">
+          <strong>Credenciais padrão (UI):</strong>
+          <p>Email: <code>teste@brasexperiencie.com</code></p>
+          <p>Senha: <code>123456</code></p>
+        </div>
+
+        <form class="request-form" data-login-form>
+          <label>
+            Email
+            <input type="email" name="email" required placeholder="Digite seu email" />
+          </label>
+          <label>
+            Senha
+            <input type="password" name="password" required placeholder="Digite sua senha" />
+          </label>
+          <button class="btn btn-primary" type="submit">Entrar</button>
+        </form>
+
+        <p class="muted" data-login-feedback></p>
+      </section>
+    </main>
+
+    <script src="./prototype.js"></script>
+  </body>
+</html>

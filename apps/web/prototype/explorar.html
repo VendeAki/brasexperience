@@ -13,8 +13,9 @@
         <nav>
           <a href="./index.html">Início</a>
           <a href="./explorar.html">Explorar</a>
-          <a href="./parceiros.html">Parceiros</a>
-          <a href="./hospedagens.html">Hospedagens</a>
+          <a href="./lojas.html">Lojas</a>
+          <a href="./roteiro.html">Roteiro</a>
+          <a href="./login.html">Login</a>
         </nav>
       </div>
     </header>
@@ -34,17 +35,31 @@
 
       <section class="grid-2">
         <article class="card">
-          <h3>Mapa (protótipo)</h3>
-          <p>Área reservada para integração Mapbox/Google Maps.</p>
-          <div class="map-placeholder">[ Mapa Interativo ]</div>
+          <h3>Pré-visualização Google Maps</h3>
+          <p class="muted">Mapa inicial com foco na região do Brás e pins simulados das lojas cadastradas.</p>
+          <div class="map-google-preview">
+            <iframe
+              title="Mapa do Brás"
+              src="https://www.google.com/maps?q=Br%C3%A1s%2C%20S%C3%A3o%20Paulo&z=15&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="pins-list">
+            <span class="pin-chip">📍 Shopping Vautier</span>
+            <span class="pin-chip">📍 Feirinha da Madrugada</span>
+            <span class="pin-chip">📍 Mega Polo Moda</span>
+          </div>
         </article>
+
         <article class="card">
-          <h3>Resultados próximos</h3>
+          <h3>Lojas mapeadas</h3>
           <ul class="list">
             <li>Shopping Vautier • 450m • ⭐ 4.5</li>
-            <li>Restaurante Central • 600m • ⭐ 4.2</li>
-            <li>Loja Atacado Moda X • 800m • ⭐ 4.6</li>
+            <li>Feirinha da Madrugada • 600m • ⭐ 4.6</li>
+            <li>Mega Polo Moda • 900m • ⭐ 4.7</li>
           </ul>
+          <a class="btn btn-primary" href="./lojas.html">Montar roteiro de lojas</a>
         </article>
       </section>
     </main>

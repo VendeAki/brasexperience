@@ -504,3 +504,76 @@ nav a {
     bottom: 16px;
   }
 }
+
+.login-page {
+  display: grid;
+  place-items: center;
+}
+
+.login-card {
+  width: min(560px, 100%);
+}
+
+.test-credentials {
+  background: #eef6ff;
+  border: 1px solid #d8e8f8;
+  border-radius: 10px;
+  padding: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.test-credentials p {
+  margin: 0.25rem 0;
+}
+
+.stores-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.store-card {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.route-list {
+  margin: 0 0 1rem;
+}
+
+.route-list li {
+  margin-bottom: 0.5rem;
+}
+
+.map-google-preview {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.map-google-preview iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+}
+
+.pins-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+
+.pin-chip {
+  padding: 0.35rem 0.55rem;
+  background: #edf2f7;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .stores-grid {
+    grid-template-columns: 1fr;
+  }
+}

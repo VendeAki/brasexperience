@@ -188,3 +188,111 @@
     render();
   });
 })();
+
+(function initLoginPrototype() {
+  const loginForm = document.querySelector('[data-login-form]');
+  const feedback = document.querySelector('[data-login-feedback]');
+  if (!loginForm) return;
+
+  const defaultEmail = 'teste@brasexperiencie.com';
+  const defaultPassword = '123456';
+
+  loginForm.addEventListener('submit', function handleLogin(event) {
+    event.preventDefault();
+    const formData = new FormData(loginForm);
+    const email = String(formData.get('email') ?? '').trim().toLowerCase();
+    const password = String(formData.get('password') ?? '');
+
+    if (email === defaultEmail && password === defaultPassword) {
+      localStorage.setItem('bras.session', JSON.stringify({ email, loggedAt: new Date().toISOString() }));
+      if (feedback) feedback.textContent = 'Login de teste realizado com sucesso!';
+      return;
+    }
+
+    if (feedback) feedback.textContent = 'Credenciais inválidas. Use as credenciais padrão exibidas na tela.';
+  });
+})();
+
+(function initStoresSelectionPrototype() {
+  const addButtons = Array.from(document.querySelectorAll('[data-add-store]'));
+  const feedback = document.querySelector('[data-store-feedback]');
+  if (!addButtons.length) return;
+
+  function getRoute() {
+    const stored = localStorage.getItem('bras.route.stores');
+    if (!stored) return [];
+    try {
+      return JSON.parse(stored);
+    } catch (_error) {
+      return [];
+    }
+  }
+
+  function setRoute(route) {
+    localStorage.setItem('bras.route.stores', JSON.stringify(route));
+  }
+
+  addButtons.forEach(function bindButton(button) {
+    button.addEventListener('click', function addStore() {
+      const card = button.closest('.store-card');
+      if (!card) return;
+
+      const store = {
+        id: card.getAttribute('data-store-id'),
+        name: card.getAttribute('data-store-name'),
+        address: card.getAttribute('data-store-address')
+      };
+
+      const route = getRoute();
+      const exists = route.some(function find(item) {
+        return item.id === store.id;
+      });
+
+      if (!exists) {
+        route.push(store);
+        setRoute(route);
+      }
+
+      if (feedback) feedback.textContent = `${store.name} adicionada ao roteiro.`;
+    });
+  });
+})();
+
+(function initRoutePagePrototype() {
+  const routeList = document.querySelector('[data-route-list]');
+  const clearButton = document.querySelector('[data-clear-route]');
+  if (!routeList) return;
+
+  function readRoute() {
+    const stored = localStorage.getItem('bras.route.stores');
+    if (!stored) return [];
+    try {
+      return JSON.parse(stored);
+    } catch (_error) {
+      return [];
+    }
+  }
+
+  function renderRoute() {
+    const stores = readRoute();
+    routeList.innerHTML = '';
+
+    if (!stores.length) {
+      routeList.innerHTML = '<li>Nenhuma loja adicionada ainda.</li>';
+      return;
+    }
+
+    stores.forEach(function renderStore(store, index) {
+      const item = document.createElement('li');
+      item.textContent = `${index + 1}. ${store.name} — ${store.address}`;
+      routeList.appendChild(item);
+    });
+  }
+
+  clearButton?.addEventListener('click', function clearRoute() {
+    localStorage.removeItem('bras.route.stores');
+    renderRoute();
+  });
+
+  renderRoute();
+})();

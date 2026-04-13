@@ -14,6 +14,9 @@ Protótipo frontend:
 - `apps/web/prototype/hospedagens.html`
 - `apps/web/prototype/hospedagem-detalhe.html`
 - `apps/web/prototype/parceiro-detalhe.html`
+- `apps/web/prototype/roteiro.html`
+- `apps/web/prototype/lojas.html`
+- `apps/web/prototype/login.html`
 
 Supabase/Live Server:
 - `apps/web/.env.example`
