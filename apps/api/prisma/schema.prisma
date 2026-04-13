@@ -1,0 +1,126 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  VISITOR
+  SHOPKEEPER
+  SERVICE_PROVIDER
+  CREDENTIALED_PARTNER
+  HOST
+  ADMIN
+  INTERNAL_TEAM
+}
+
+model User {
+  id           String     @id @default(cuid())
+  email        String     @unique
+  passwordHash String
+  isActive     Boolean    @default(true)
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  roles        UserRole[]
+  profile      Profile?
+}
+
+model Profile {
+  id          String  @id @default(cuid())
+  userId      String  @unique
+  displayName String
+  phone       String?
+  avatarUrl   String?
+  user        User    @relation(fields: [userId], references: [id])
+}
+
+model Category {
+  id        String   @id @default(cuid())
+  name      String
+  slug      String   @unique
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+model Region {
+  id        String   @id @default(cuid())
+  name      String
+  slug      String   @unique
+  createdAt DateTime @default(now())
+}
+
+model Place {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String?
+  categoryId  String
+  regionId    String
+  latitude    Decimal  @db.Decimal(10, 7)
+  longitude   Decimal  @db.Decimal(10, 7)
+  ratingAvg   Decimal  @default(0) @db.Decimal(3, 2)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  category Category @relation(fields: [categoryId], references: [id])
+  region   Region   @relation(fields: [regionId], references: [id])
+}
+
+model ServiceProvider {
+  id              String   @id @default(cuid())
+  userId          String
+  serviceType     String
+  bio             String?
+  coverageRegion  String
+  availabilityRaw Json?
+  ratingAvg       Decimal  @default(0) @db.Decimal(3, 2)
+  isApproved      Boolean  @default(false)
+  createdAt       DateTime @default(now())
+}
+
+model Property {
+  id             String   @id @default(cuid())
+  hostUserId     String
+  title          String
+  description    String?
+  regionId       String
+  nightlyPrice   Decimal  @db.Decimal(10, 2)
+  maxGuests      Int
+  rules          Json?
+  isApproved     Boolean  @default(false)
+  createdAt      DateTime @default(now())
+}
+
+model BookingRequest {
+  id          String   @id @default(cuid())
+  propertyId  String
+  guestUserId String
+  startDate   DateTime
+  endDate     DateTime
+  status      String
+  notes       String?
+  createdAt   DateTime @default(now())
+}
+
+model ContactRequest {
+  id               String   @id @default(cuid())
+  requesterUserId  String?
+  targetType       String
+  targetId         String
+  message          String?
+  status           String
+  createdAt        DateTime @default(now())
+}
+
+model Review {
+  id            String   @id @default(cuid())
+  reviewerUserId String
+  targetType    String
+  targetId      String
+  rating        Int
+  comment       String?
+  createdAt     DateTime @default(now())
+}
