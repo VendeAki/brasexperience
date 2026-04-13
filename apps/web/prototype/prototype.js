@@ -131,3 +131,60 @@
 
   updateAverageRating();
 })();
+
+(function initHostingListCarousels() {
+  const carousels = Array.from(document.querySelectorAll('[data-hosting-carousel]'));
+  if (!carousels.length) return;
+
+  carousels.forEach(function setupCarousel(root) {
+    const imageEl = root.querySelector('[data-hosting-image]');
+    const prevBtn = root.querySelector('[data-hosting-prev]');
+    const nextBtn = root.querySelector('[data-hosting-next]');
+    const dotsRoot = root.querySelector('[data-hosting-dots]');
+
+    if (!imageEl || !prevBtn || !nextBtn || !dotsRoot) return;
+
+    const rawImages = root.getAttribute('data-images') ?? '[]';
+    let images = [];
+
+    try {
+      images = JSON.parse(rawImages);
+    } catch (_error) {
+      images = [];
+    }
+
+    if (!images.length) return;
+
+    let index = 0;
+
+    function render() {
+      imageEl.setAttribute('src', images[index]);
+      Array.from(dotsRoot.children).forEach(function updateDot(dot, dotIndex) {
+        dot.classList.toggle('active', dotIndex === index);
+      });
+    }
+
+    images.forEach(function createDot(_, dotIndex) {
+      const dot = document.createElement('button');
+      dot.className = 'hosting-dot';
+      dot.type = 'button';
+      dot.addEventListener('click', function selectDot() {
+        index = dotIndex;
+        render();
+      });
+      dotsRoot.appendChild(dot);
+    });
+
+    prevBtn.addEventListener('click', function prev() {
+      index = (index - 1 + images.length) % images.length;
+      render();
+    });
+
+    nextBtn.addEventListener('click', function next() {
+      index = (index + 1) % images.length;
+      render();
+    });
+
+    render();
+  });
+})();
