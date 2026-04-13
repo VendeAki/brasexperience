@@ -1,0 +1,15 @@
+# Force text handling to avoid binary diffs in PR tools
+* text=auto eol=lf
+
+# Explicit UTF-8 text files used in this repo
+*.md text
+*.ts text
+*.tsx text
+*.js text
+*.json text
+*.yml text
+*.yaml text
+*.html text
+*.css text
+*.prisma text
+*.env text

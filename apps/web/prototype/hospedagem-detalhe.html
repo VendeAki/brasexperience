@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bras Experiencie | Detalhe da Hospedagem</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-content">
+        <strong>Bras Experiencie</strong>
+        <nav>
+          <a href="./index.html">Início</a>
+          <a href="./explorar.html">Explorar</a>
+          <a href="./parceiros.html">Parceiros</a>
+          <a href="./hospedagens.html">Hospedagens</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container page">
+      <a class="back-link" href="./hospedagens.html">← Voltar para hospedagens</a>
+
+      <section class="detail-layout">
+        <div>
+          <h1>Studio Brás Central</h1>
+          <p class="muted">Rua X, Brás • 5 min do metrô • ⭐ 4.8 (124 avaliações)</p>
+
+          <div class="carousel card" data-carousel>
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80" alt="Sala do studio" class="carousel-image" data-carousel-image />
+            <div class="carousel-controls">
+              <button class="btn btn-secondary" data-prev>Foto anterior</button>
+              <button class="btn btn-secondary" data-next>Próxima foto</button>
+            </div>
+          </div>
+
+          <section class="card detail-section">
+            <h3>Sobre esta hospedagem</h3>
+            <p>
+              Studio mobiliado para compradores e visitantes do Brás. Possui cozinha equipada,
+              wi-fi rápido e acesso facilitado para transporte e centros comerciais.
+            </p>
+            <ul class="list">
+              <li>Até 4 hóspedes</li>
+              <li>1 quarto • 2 camas • 1 banheiro</li>
+              <li>Check-in: 14h | Check-out: 11h</li>
+              <li>Preço médio: R$ 220/noite</li>
+            </ul>
+          </section>
+        </div>
+
+        <aside class="card booking-box">
+          <h3>Reservar datas</h3>
+          <p class="muted">Selecione um período para solicitar sua reserva.</p>
+
+          <div class="calendar-grid" data-calendar>
+            <button class="calendar-day available">12</button>
+            <button class="calendar-day available">13</button>
+            <button class="calendar-day unavailable">14</button>
+            <button class="calendar-day available">15</button>
+            <button class="calendar-day available">16</button>
+            <button class="calendar-day unavailable">17</button>
+            <button class="calendar-day available">18</button>
+            <button class="calendar-day available">19</button>
+            <button class="calendar-day available">20</button>
+            <button class="calendar-day unavailable">21</button>
+            <button class="calendar-day available">22</button>
+            <button class="calendar-day available">23</button>
+          </div>
+
+          <div class="booking-summary">
+            <p><strong>Check-in:</strong> <span data-checkin>Não selecionado</span></p>
+            <p><strong>Check-out:</strong> <span data-checkout>Não selecionado</span></p>
+            <p><strong>Valor estimado:</strong> R$ <span data-total>0</span></p>
+          </div>
+
+          <button class="btn btn-primary booking-action">Solicitar reserva</button>
+          <p class="muted small">Protótipo visual sem integração de pagamento ou confirmação real.</p>
+        </aside>
+      </section>
+    </main>
+
+    <script src="./prototype.js"></script>
+  </body>
+</html>
